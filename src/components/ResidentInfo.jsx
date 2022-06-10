@@ -7,7 +7,7 @@ const ResidentInfo = ({ url }) => {
 
   return character ? (
     <div className="col-md-6">
-      <div className="card bg-dark text-white">
+      <div className="card bg-dark text-white d-flex flex-direction-column">
         <img src={character.image} alt="" />
         <div className="card-body">
           <div className="card-title"></div>
