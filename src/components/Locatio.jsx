@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Location = ({Location}) => {
+const Locatio = ({ loc }) => {
   return (
     <div className="col-lg-6">
       <div className="card">
         <img src="" alt="" />
         <div className="card-body">
-          <div className="title"></div>
+          <div className="title">{loc.name}</div>
           <div className="text"></div>
         </div>
       </div>
@@ -14,4 +14,4 @@ const Location = ({Location}) => {
   );
 };
 
-export default Location;
+export default Locatio;
