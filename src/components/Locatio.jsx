@@ -2,12 +2,24 @@ import React from 'react';
 
 const Locatio = ({ loc }) => {
   return (
-    <div className="col-lg-6">
-      <div className="card">
-        <img src="" alt="" />
-        <div className="card-body">
-          <div className="title">{loc.name}</div>
-          <div className="text"></div>
+    <div className="location">
+      <div className="container my-2 my-md-3">
+        <div className="card bg-dark text-white">
+          <div className="title text-center">
+            Earth <span className="fw-bolder">{loc.name}</span>
+          </div>
+          <div className="card-body d-flex flex-column text-center flex-md-row justify-content-evenly ">
+            <div className="text p-2">
+              Type: <span className="fw-bolder">{loc.type}</span>
+            </div>
+            <div className="text p-2">
+              Dimension: <span className="fw-bolder">{loc.dimension}</span>
+            </div>
+            <div className="text p-2">
+              Population:{' '}
+              <span className="fw-bolder">{loc.residents.length}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

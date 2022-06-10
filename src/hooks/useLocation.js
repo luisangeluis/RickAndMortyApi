@@ -8,11 +8,11 @@ const useLocation = () => {
 
   useEffect(() => {
     const randomId = Math.floor(Math.random() * (127 - 1)) + 1;
-    console.log(typeof randomId);
+    // console.log(typeof randomId);
     axios
       .get(`https://rickandmortyapi.com/api/location/${randomId}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setLocation(response.data);
         setLoading(false);
       })
