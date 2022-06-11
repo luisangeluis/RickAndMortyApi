@@ -3,9 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+.header .container{
+  min-height: 50vh;
+  background: url(./assets/images/rickandmorty.jpg) center no-repeat;
+  background-size: cover;
+  padding: 1rem;
+  /* margin-left: 0;
+  margin-right: 0; */
 
-.container-residents .card{
+}
+.residents-container .card{
   flex-direction: row;
+  height: 90%;
 }
 
 .card img{

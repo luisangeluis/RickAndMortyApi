@@ -2,8 +2,8 @@ import React from 'react';
 
 const Locatio = ({ loc }) => {
   return (
-    <div className="location">
-      <div className="container my-2 my-md-3">
+    <div className="row">
+      <div className="col-12 my-2 my-md-3">
         <div className="card bg-dark text-white">
           <div className="title text-center">
             Earth <span className="fw-bolder">{loc.name}</span>
