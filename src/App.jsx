@@ -9,8 +9,10 @@ import useLocation from './hooks/useLocation';
 
 function App() {
 
-  const [idSearch, setIdSearch] = useState(0);
+  const [idSearch, setIdSearch] = useState();
   const [loc, loading] = useLocation(idSearch);
+
+  console.log(idSearch);
 
   return (
     <div className="App">
@@ -25,7 +27,7 @@ function App() {
         <div className="row">
           <div className="col-12 residents">
             <div className="container residents-container">
-              <div className="row justify-content-center ">
+              <div className="row justify-content-start">
                 {loc ? (
                   loc.residents.map((resident) => {
                     return <ResidentInfo url={resident} key={resident} />;

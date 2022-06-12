@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: #34495E;
+}
 .header .container-fluid{
   min-height: 50vh;
   background-image: url('./assets/images/rickandmorty.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   background-position: center;
 }
 

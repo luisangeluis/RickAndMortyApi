@@ -9,7 +9,7 @@ const useResidentInfo = (url) => {
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setCharacter(response.data);
       })
       .catch((error) => console.log(error));
