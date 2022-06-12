@@ -15,13 +15,11 @@ function App() {
   return (
     <div className="App">
       <header className='header'>
-        <div className="container-fluid">
-          <Jumbotron>
-          </Jumbotron>
+        <div className="container-fluid py-2 py-md-3">
+          <SearchLocation setIdSearch={setIdSearch} />
         </div>
       </header>
       <div className="container pb-2 pb-md-3">
-        <SearchLocation setIdSearch={setIdSearch} />
         {loading ? <Loader /> : <Locatio loc={loc} />}
         {/* Residents */}
         <div className="row">
