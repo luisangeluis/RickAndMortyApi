@@ -8,14 +8,12 @@ const useLocation = (idSearch) => {
 
   useEffect(() => {
     let randomId;
-    if(idSearch)
-      randomId = idSearch;
-    else  
-      randomId = Math.floor(Math.random() * (127 - 1)) + 1;
+    if (idSearch) randomId = idSearch;
+    else randomId = Math.floor(Math.random() * (127 - 1)) + 1;
     axios
       .get(`https://rickandmortyapi.com/api/location/${randomId}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setLocation(response.data);
         setLoading(false);
       })
