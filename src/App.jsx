@@ -3,14 +3,13 @@ import './App.css';
 import Loader from './components/Loader';
 import Locatio from './components/Locatio';
 import ResidentInfo from './components/ResidentInfo';
+import ResidentList from './components/ResidentList';
 import SearchLocation from './components/SearchLocation';
 import useLocation from './hooks/useLocation';
 
 function App() {
   const [idSearch, setIdSearch] = useState();
   const [loc, loading] = useLocation(idSearch);
-
-  // console.log(idSearch);
 
   return (
     <div className="App">
@@ -21,18 +20,7 @@ function App() {
       </header>
       <div className="container pb-2 pb-md-3">
         {loading ? <Loader /> : <Locatio loc={loc} />}
-        {/* Residents */}
-        <div className="row">
-          <div className="col-12 residents">
-            <div className="container residents-container">
-              <div className="row justify-content-start">
-                {loc?.residents.map((resident) => {
-                  return <ResidentInfo url={resident} key={resident} />;
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
+        {loc && <ResidentList loc={loc} />}
       </div>
     </div>
   );
