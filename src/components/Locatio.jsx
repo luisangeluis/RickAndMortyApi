@@ -2,7 +2,7 @@ import React from 'react';
 
 const Locatio = ({ loc }) => {
   return (
-    <div className="row">
+    <div className="row class">
       <div className="col-12 my-2 my-md-3">
         <div className="card bg-dark text-white">
           <div className="title text-center">
