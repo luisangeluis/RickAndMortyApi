@@ -18,11 +18,11 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div className="container-fluid py-2 py-md-3">
+        {/* <div className="container-fluid py-2 py-md-3">
           <SearchLocation setIdSearch={setIdSearch} />
-        </div>
+        </div> */}
         <div className="container-fluid py-2 py-md-3">
-          <SearchLocationName setNameSearch={setNameSearch} />
+          <SearchLocationName setNameSearch={setNameSearch} locName={locName} />
         </div>
       </header>
       <div className="container pb-2 pb-md-3">
