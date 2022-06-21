@@ -1,26 +1,42 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useLocation = (idSearch) => {
+const useLocation = (nameToSearch) => {
   const [loc, setLocation] = useState();
+  const [locs, setLocs] = useState();
   const [loading, setLoading] = useState(true);
 
+  console.log(nameToSearch);
+
   useEffect(() => {
-    let randomId;
-    if (idSearch) randomId = idSearch;
-    else randomId = Math.floor(Math.random() * (127 - 1)) + 1;
+    let randomId = Math.floor(Math.random() * (127 - 1)) + 1;
+    let url = `https://rickandmortyapi.com/api/location/${randomId}`;
+
     axios
-      .get(`https://rickandmortyapi.com/api/location/${randomId}`)
+      .get(url)
       .then((response) => {
         // console.log(response.data);
         setLocation(response.data);
         setLoading(false);
       })
       .catch((error) => console.log(error));
-  }, [idSearch]);
+  }, []);
 
-  return [loc, loading];
+  useEffect(() => {
+    if (nameToSearch != undefined) {
+      axios
+        .get(`https://rickandmortyapi.com/api/location/?name=${nameToSearch}`)
+        .then((res) => {
+          console.log(res);
+          setLocs(res.data.results);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [nameToSearch]);
+
+  return [loc, loading, locs];
 };
 
 export default useLocation;
