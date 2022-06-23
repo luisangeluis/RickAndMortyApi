@@ -9,14 +9,18 @@ import useLocation from './hooks/useLocation';
 
 function App() {
   const [nameToSearch, setNameToSearch] = useState();
-  const [loc, loading, locs] = useLocation(nameToSearch);
+  const [loc, setLocation, loading, locs] = useLocation(nameToSearch);
 
-  console.log(loc);
+  // console.log(loc);
   return (
     <div className="App">
       <header className="header">
         <div className="container-fluid py-2 py-md-3">
-          <SearchLocation setNameToSearch={setNameToSearch} locs={locs} />
+          <SearchLocation
+            setNameToSearch={setNameToSearch}
+            locs={locs}
+            setLocation={setLocation}
+          />
         </div>
       </header>
       <div className="container pb-2 pb-md-3">

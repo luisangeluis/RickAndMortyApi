@@ -36,7 +36,11 @@ const useLocation = (nameToSearch) => {
     }
   }, [nameToSearch]);
 
-  return [loc, loading, locs];
+  useEffect(() => {
+    // if()
+  }, [loc]);
+
+  return [loc, setLocation, loading, locs];
 };
 
 export default useLocation;
